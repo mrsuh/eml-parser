@@ -1,0 +1,17 @@
+#!/bin/sh
+
+cd "$( cd `dirname $0` && pwd )/.."
+
+for f in 'tomita/contact/config.proto';  do
+if [ ! -f $f ]; then
+    cp $f.dist $f
+    echo "Created $f"
+fi
+done
+
+file=$(pwd)/bin/tomita
+if [ ! -f $file ]; then
+ wget -O $file.bz2 'http://download.cdn.yandex.net/tomita/tomita-linux64.bz2'
+ bzip2 -d $file.bz2
+ chmod u+x $file
+fi

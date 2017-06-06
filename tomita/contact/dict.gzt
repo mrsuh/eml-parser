@@ -1,0 +1,34 @@
+encoding "utf8";               // указываем кодировку, в которой написан этот файл
+
+import "base.proto";           // подключаем описания protobuf-типов (TAuxDicArticle и прочих)
+import "articles_base.proto";  // Файлы base.proto и articles_base.proto встроены в компилятор.
+                               // Их необходимо включать в начало любого gzt-словаря.
+import "kwtypes_my.proto";
+import "fact_types.proto";
+
+TAuxDicArticle "article_contact"
+{
+    key = {"tomita:article/email.cxx" type=CUSTOM},
+    key = {"tomita:article/name.cxx" type=CUSTOM},
+    key = {"tomita:article/phone.cxx" type=CUSTOM}
+}
+
+email "электронная почта"
+{
+    key = "ANDREY.KULINICH@GMAIL.COM"
+}
+
+person "фио"
+{
+    key = "Андрей Кулинич"
+}
+
+phone "телефон"
+{
+    key = "89262075824"
+    key = "79262075824"
+    key = "9262075824"
+    key = "89160600958"
+    key = "79160600958"
+    key = "9160600958"
+}

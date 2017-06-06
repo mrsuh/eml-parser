@@ -1,0 +1,7 @@
+/.idea/*
+/bin/tomita
+/tomita/contact/article/email.bin
+/tomita/contact/article/name.bin
+/tomita/contact/article/phone.bin
+/tomita/contact/config.proto
+/tomita/contact/dict.gzt.bin

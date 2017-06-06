@@ -1,0 +1,23 @@
+encoding "utf8";
+
+TTextMinerConfig {
+
+    //Путь в файлу газеттира
+    Dictionary = "path/to/tomita/contact/dict.gzt";
+
+    // Формат вывода данных
+    Output = {
+        Format = xml;
+    }
+
+    Articles = [
+    { Name = "article_contact" }
+    ]
+
+    Facts = [
+    { Name = "FactPerson" },
+    { Name = "FactEmail" },
+    { Name = "FactPhone" }
+    ]
+
+}

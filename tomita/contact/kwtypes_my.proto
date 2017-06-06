@@ -1,0 +1,5 @@
+import "base.proto";
+import "articles_base.proto";
+message email : TAuxDicArticle {}
+message person : TAuxDicArticle {}
+message phone : TAuxDicArticle {}
