@@ -45,7 +45,6 @@ function handle(Tomita $tomita, string $raw_text)
  */
 function unique(array $persons)
 {
-
     $unique = [];
     foreach ($persons as $person) {
 

@@ -16,7 +16,6 @@ class Formatter
         $text = preg_replace('/(From): .* (\W\w+@\w+\W)/', '$1: $2', $text);
         $text = preg_replace('/(To): .* (\W\w+@\w+\W)/', '$1: $2', $text);
         $text = preg_replace('/>/', '', $text);
-        $text = mb_strtolower($text);
 
         $lines = [];
         foreach (explode(PHP_EOL, $text) as $line) {

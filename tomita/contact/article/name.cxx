@@ -1,10 +1,17 @@
 #encoding "utf8"
 #GRAMMAR_ROOT ROOT
 
-End -> AnyWord<wff="с"> AnyWord<wff="уважением">;
-Begin -> AnyWord<wff="from|to">;
+Begin -> AnyWord<wff="from|From|To|to|Кому|кому"> | AnyWord<wff="от|От"> AnyWord<wff="кого|Кого">{ weight=1 };
+End -> AnyWord<wff="с|С"> AnyWord<wff="уважением|Уважением"> { weight=0.1 };
 
-NameRegexp -> Word Word Word | Word Word | Word;
-Name -> NameRegexp<kwset=~[person]>;
+Name -> Word<gram="persn">;
+Surname -> Word<gram="famn">;
+Patronymic -> Word<gram="patrn">;
 
-ROOT -> End AnyWord Name interp (FactPerson.Name::not_norm);
+PersonRegexp -> Surname Name Patronymic | Surname Name | Name | Name Surname;
+Person -> PersonRegexp<kwset=~[person]>;
+
+Any -> AnyWord<gram="~persn, ~famn, ~patrn">;
+
+ROOT -> End Any* Person interp (FactPerson.Name::not_norm) { weight=0 };
+ROOT -> Begin Any* Person interp (FactPerson.Name::not_norm) { weight=1 };
