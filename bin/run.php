@@ -112,5 +112,5 @@ foreach (unique($persons) as $person) {
     $str .= 'Email: ' . $person->getEmail() . PHP_EOL;
     $str .= 'Phone: ' . $person->getPhone() . PHP_EOL;
     $str .= '======================================' . PHP_EOL;
-    file_put_contents('persons.yml', $str, FILE_APPEND);
+    file_put_contents('persons.txt', $str, FILE_APPEND);
 }
